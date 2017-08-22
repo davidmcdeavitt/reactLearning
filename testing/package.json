@@ -5,8 +5,6 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.2",
-    "react-dom": "^15.6.1",
-    "react-scripts": "1.0.11",
     "sfcookies": "^1.0.2"
   },
   "scripts": {
@@ -14,5 +12,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "^1.0.11",
+    "react-test-renderer": "^15.6.1"
   }
 }
