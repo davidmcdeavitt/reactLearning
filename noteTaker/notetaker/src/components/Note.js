@@ -1,9 +1,9 @@
-import React, { Component } from React;
+import React, {Component} from 'react';
 
 class Note extends Component {
     render() {
         return (
-            <div>
+            <div className='note'>
                 <p>{this.props.note.text}</p>
             </div>
         )
