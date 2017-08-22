@@ -1,10 +1,11 @@
 {
-  "name": "notetaker",
+  "name": "testing",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.2",
+    "react-dom": "^15.6.1",
     "sfcookies": "^1.0.2"
   },
   "scripts": {
@@ -15,7 +16,6 @@
   },
   "devDependencies": {
     "enzyme": "^2.9.1",
-    "react-dom": "^15.6.1",
     "react-scripts": "^1.0.11",
     "react-test-renderer": "^15.6.1"
   }
