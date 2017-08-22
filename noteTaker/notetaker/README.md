@@ -304,3 +304,40 @@ Next we need to make a function to clear the notes as they get completed. Enter 
 Now check this in the DOM. 
 
 JUST LIKE THAT WE GOT A NOTE TAKER APP IN REACT!!!
+
+Recap:
+
+ES6 Classes: Classes in ES6 can represent components in a web application or even things in real life. Objects created with these classes interact with each other in order to define a program or application.
+
+ES6 Class inheritance: Classes can inherit from other classes to inherit properties and methods. Notably, React components extends the base Component class from the ‘react’ library.
+
+ES6 Template Strings: Template strings provide a convenient and syntactically concise way of concatenating strings together. They use backticks - , and the dollar-sign curly brace syntax - ${}, for interpolation.
+
+ES6 Imports and Exports: ES6 imports and exports provide a convenient way to share code between files through default and regular exports.
+
+ES6 Arrow Functions: Arrow functions in ES6 provide a syntactic alternative to functions declared with the `function` keyword. They don’t create their own `this` object which allows React components to use their own `this` object within component methods.
+
+ES6 Destructuring Objects: Destructuring objects in es6 gives a convenient way to declare variables whose name match key names within objects.
+
+React Components: Components in React extends the base Component class from the ‘react’ library. They include a render function which defines their structure through JSX.
+
+JSX: JSX adds XML-like syntax to JavaScript, and is the primary way to define component structure in React.
+
+State: State in a React component reflects its underlying data. State updates to reflect changes in response to user input and events.
+
+Props: The concept of props in React components refers to data received from parent components.
+
+Lifecycle Hooks: Lifecycle hooks including `componentDidMount` refer to methods that fire throughout specific times in the life of a React component.
+
+Cookies: Cookies act as local storage units for web applications.
+
+If you want to keep building upon NoteToSelf and extend your React skills, perhaps you would like to challenge yourself by adding these features:
+
+A way to delete individual notes.
+
+A way to edit individual notes.
+
+A way to re-order notes.
+
+Add local storage with cookies to any feature above.
+
