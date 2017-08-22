@@ -240,3 +240,67 @@ return(
 ```
 
 As you can see we have the notes prop (which is that same array) but now can be passed down to the child component Notes. 
+
+Step 14: now we should add a bit of styling to our notes. Do do this we need to ass a tag to the div in Note.js
+```
+<div className='note'>
+```
+Then in the index.css file we will add some styling mechanisms:
+```
+.note {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-style: italic;
+    text-align: left;
+    padding: 8px;
+    margin: 30px;
+}
+```
+Now we have some sweet cards here that we can use and possibly play with
+
+Step 15: In order to save peoples changes however we need to start thinking about adding a cookie to capiture this information. in order to do this you need to run the following on the terminal:
+```
+npm install sfcookies --save
+```
+
+Step 16: Now in order to save these notes and store the information we need to bring in this new library sf cookies and set it qual to a variable. In order to do this we need to add this code to the very top of App.js:
+```
+import {bake_cookie, read_cookie, delete_cookie} from 'sfcookies';
+
+const cookie_key = 'NOTES';
+```
+These built in functions allow us to create a cookie, read them, then delete the cookie when it is no longer needed.
+We needed a way to take all these function and wrap them around a commn element. To do this we created a cookiekey and set it equal to to a string. To create the cookie we can imput it when the information is submitted in the application. to do this we should ass the following into the submit function to capiture it the instance an object is created:
+```
+bake_cookie(cookie_key, this.state.notes);
+```
+
+The question now is how we can tell the component to fire this function when we create a new item. The answer to that is lifecycle hooks, and the most important one of them all, which is componentDidMount. This activates when our component finishes loading or updating to the DOM of the app. We now need to say to the notes that when we create them that this state or local information we have  needs to be returned to us. 
+so now we will say the initial state of the cookie is what we have already created for this user:
+
+```
+componentDidMount() {
+this.setState({ notes: read_cookie(cookie_key) });
+}
+```
+
+Make sure you app is not broken and is still saving notes
+
+Step 17: We now need to be able to delete cookies. First we need a new function that allows us to take advantage of the deete cookies method. Just below the submit function imput a new clear() function as follows:
+
+```
+clear() {
+        delete_cookie(cookie_key);
+
+        this.setState({ notes: [] });
+    }
+```
+Next we need to make a function to clear the notes as they get completed. Enter this text in the return function area below the Notes section:
+```
+<hr/>
+<Button onClick={() => this.clear()}>Clear notes</Button>
+```
+
+Now check this in the DOM. 
+
+JUST LIKE THAT WE GOT A NOTE TAKER APP IN REACT!!!
