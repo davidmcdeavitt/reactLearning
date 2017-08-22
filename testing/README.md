@@ -170,3 +170,11 @@ expect(app2.state().notes).toEqual([{ text: testNote }]);
 });
 ```
 And there we go we should have 10 passing tests and with it an entire testing suite for our app.
+
+Step 12: We now need to end the current testing session. We then need to enter the following into the terminal to see if our test cover the full bredth of what is needed for our app. This is a Jist suite that comes built in.:
+```
+npm test -- --coverage
+```
+you should get 100% on the areas in which we wrote.
+
+
