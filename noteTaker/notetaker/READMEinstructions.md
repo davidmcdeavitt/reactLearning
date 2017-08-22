@@ -211,3 +211,32 @@ constructor() {
         )
     }
 ```
+First we are creating an array for our notes to be captured in the main parent component section. We then use the submit() function to take the input we are giving them and push the into the notes aray. It also identifies in this function where we will get this information from, which takes the text state, maps it into the notes index, where it is then pushed into the array.
+
+Step 13: It is not time to take this information we just captured in the note array and use it in a component. To do this we need to make a note component by creating Note.js file in the same folder as App.js and add some code as follows:
+```
+import React, { Component } from React;
+
+class Note extends Component {
+    render() {
+        return (
+            <div>
+                <p>{this.props.note.text}</p>
+            </div>
+        )
+    }
+}
+
+export default Note;
+```
+this creates the component but now we have to think about how it is actually captured. IF you look at the <p> tag above you will notice the .props. This is how the child can capture the information from the parent. Now we just need to make some minor changes to the App.js file in order to capture these changes:
+
+```
+this.state.notes.map((note, index) => {
+return(
+<Note key={index} note={note} />
+)  
+})
+```
+
+As you can see we have the notes prop (which is that same array) but now can be passed down to the child component Notes. 
