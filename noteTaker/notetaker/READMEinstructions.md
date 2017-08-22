@@ -170,3 +170,44 @@ We now need to make the following changes and additions to the App.js file:
 <Button onClick={() => console.log(this.state)}>Submit</Button>
 ```
 the inline addition to Form will allow the text box and button to be next to eachother (make sure that your out of the console log) and adding a space between the input and the button.
+
+Step 12: Next make the following changes to the App.js file and I will explain what exactly we are doing:
+```
+constructor() {
+        super();
+
+        this.state = {
+            text: '',
+            notes: []
+        }
+    }
+
+    submit() {
+        const { notes, text } = this.state;
+
+        notes.push({text});
+
+        this.setState({ notes });
+
+    }
+
+    render() {
+        return (
+            <div>
+                <h2>Note to Self</h2>
+                <Form inline>
+                    <FormControl onChange={event => this.setState({ text: event.target.value })} />
+                        {' '}
+                    <Button onClick={() => this.submit()}>Submit</Button>
+                </Form>
+                {
+                    this.state.notes.map((note, index) => {
+                      return(
+                          <div key={index}>{note.text}</div>
+                      )  
+                    })
+                }
+            </div>
+        )
+    }
+```
