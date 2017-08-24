@@ -6,4 +6,4 @@ I will separate folders into areas based on what it is covering and detailed ste
 
 1. ES6 and how it relates to React
 2. Notetaker app
-3. 
+3. Notetaker testing suite
